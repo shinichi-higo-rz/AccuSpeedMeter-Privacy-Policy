@@ -4,17 +4,18 @@ This public repository is reserved exclusively for the AccuSpeedMeter (ASM) priv
 
 ## Publication status
 
-The bilingual policy draft is available in `index.md` and is undergoing a final implementation and Google Play Data safety review. Do not treat it as the final published policy until that review is complete and the GitHub Pages site is enabled.
+The bilingual policy page is online for final review. It is not yet the finalized release policy: implementation and Google Play Data safety checks are still in progress, and the effective date has not been set.
 
-## Before enabling GitHub Pages
+**Public page:** https://shinichi-higo-rz.github.io/AccuSpeedMeter-Privacy-Policy/
 
-- [ ] Audit all network requests and SDK behavior in the release build against the policy.
+## Remaining release checks
+
+- [ ] Complete the audit of network requests, SDK behavior, and the release build against the policy.
 - [ ] Confirm `accuspeedmetersupport@gmail.com` can receive external mail and is monitored.
-- [ ] Confirm the effective date.
-- [ ] Enable GitHub Pages for this repository using the `main` branch and root folder.
-- [ ] Verify the HTTPS page renders correctly in Japanese and English.
-- [ ] Add the final URL to the app and Google Play listing.
-- [ ] Align Google Play Data safety declarations with the final policy and SDK behavior.
+- [ ] Set the effective date before release.
+- [ ] Link the public policy from the app and Google Play listing.
+- [ ] Align Google Play Data safety declarations with the final policy and actual SDK behavior.
+- [ ] Remove the temporary review banner and internal release checklist from the public policy page before final publication.
 
 ## Privacy contact
 
