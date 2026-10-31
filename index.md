@@ -37,7 +37,8 @@ lang: ja
 - **Copernicus DEM配信サービス：** 海外の標高タイル取得。
 - **気象庁（JMA）：** 海面気圧やアメダス関連データの取得。リクエストに観測地点・データ識別子等が含まれる場合があります。
 - **OpenWeather：** 利用者が有効化しAPIキーを設定した場合、気圧データ取得のため緯度・経度とAPIキーを含むリクエストを送信します。
-- **Google Maps等：** 地図表示のため、Google Maps SDK／サービスが通信を行う場合があります。地図のリクエストや端末・SDKの情報がサービス提供者に処理される場合があります。
+- **Google Maps／Street View等：** 地図・パノラマ表示のため、Google Maps SDK／サービスが通信を行う場合があります。地図のリクエストや端末・SDKの情報がサービス提供者に処理される場合があります。
+- **地点名検索（Android Geocoder）：** 記録地点の名称を取得する機能では、端末のGeocoder実装・サービス構成に応じて、座標等がAndroidやその提供元で処理される場合があります。
 - **Androidの機能や選択した共有先：** OSのバックアップ・端末移行、ファイル選択、共有などを利用した場合、それぞれのOS機能や選択先のサービスが情報を処理する場合があります。
 
 各提供者による情報の取扱いは、各社の規約・プライバシーポリシーに従います。提供者の仕様やASMの実装が変更された場合、本ポリシーも更新します。
@@ -98,7 +99,8 @@ Depending on the feature, settings and region, ASM sends requests to:
 - **Copernicus DEM distribution services:** elevation tiles outside Japan.
 - **Japan Meteorological Agency (JMA):** sea-level pressure and AMeDAS-related data. Requests may include station or dataset identifiers.
 - **OpenWeather:** if enabled and configured with an API key, requests containing latitude, longitude and the API key are sent to retrieve pressure data.
-- **Google Maps and related services:** the Google Maps SDK/services may communicate to display maps and may process map requests and device/SDK information.
+- **Google Maps, Street View and related services:** the Google Maps SDK/services may communicate to display maps and panoramas and may process map requests and device/SDK information.
+- **Place-name lookup (Android Geocoder):** when resolving names for recorded locations, coordinates may be processed by Android or its provider depending on the device's Geocoder implementation and service configuration.
 - **Android and user-selected sharing destinations:** when OS backup/device transfer, file selection or sharing features are used, the operating system or selected destination may process the relevant information.
 
 Each provider's own terms and privacy policy govern its handling of information. This policy will be updated if provider behavior or ASM implementation changes.
