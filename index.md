@@ -33,8 +33,8 @@ Measurement history and GNSS logs are stored in the app database or similar stor
 ### 4. External services
 Depending on the feature, settings and region, ASM sends requests to:
 
-- **Geospatial Information Authority of Japan (GSI):** elevation tiles for Japan.
-- **Copernicus DEM distribution services:** elevation tiles outside Japan.
+- **Geospatial Information Authority of Japan (GSI):** elevation tiles for Japan. Requests use tile identifiers derived from the target location, which can reveal the approximate area being queried.
+- **Copernicus DEM distribution services:** elevation tiles outside Japan. Requests use tile identifiers derived from the target location, which can reveal the approximate area being queried.
 - **Japan Meteorological Agency (JMA):** sea-level pressure and AMeDAS-related data. The app downloads the station table, latest observation time, and observation map; it selects a nearby station locally using the device location, and the current request URLs do not include the user's coordinates.
 - **OpenWeather:** if enabled and configured with an API key, requests containing latitude, longitude and the API key are sent to retrieve pressure data.
 - **Google Maps, Street View and related services:** the Google Maps SDK/services communicate to display maps and panoramas. Depending on the SDK version and use, Google may automatically collect request metadata (such as device/OS and SDK version information), IP address, a pseudonymous SDK identifier, crash metrics and stack traces, and certain interaction data. The SDK may also process the coordinates supplied for the requested map or panorama.
@@ -97,8 +97,8 @@ Privacy inquiries: **accuspeedmetersupport@gmail.com**
 ### 4. 外部サービスへの通信
 機能・設定・利用地域に応じて、ASMは以下のサービスにリクエストを送信します。
 
-- **国土地理院（GSI）：** 日本国内の標高タイル取得。
-- **Copernicus DEM配信サービス：** 海外の標高タイル取得。
+- **国土地理院（GSI）：** 日本国内の標高タイル取得。リクエストには対象地点から算出したタイル識別子が含まれるため、照会対象のおおよその地域が分かる場合があります。
+- **Copernicus DEM配信サービス：** 海外の標高タイル取得。リクエストには対象地点から算出したタイル識別子が含まれるため、照会対象のおおよその地域が分かる場合があります。
 - **気象庁（JMA）：** 海面気圧やアメダス関連データの取得。観測所一覧、最新の観測時刻、観測データを取得し、端末の位置を使った観測所の選択はアプリ内で行います。現在の実装では、JMAへのリクエストURLに利用者の座標は含まれません。
 - **OpenWeather：** 利用者が有効化しAPIキーを設定した場合、気圧データ取得のため緯度・経度とAPIキーを含むリクエストを送信します。
 - **Google Maps／Street View等：** 地図・パノラマ表示のためGoogle Maps SDK／サービスが通信します。SDKのバージョンや利用方法に応じて、端末・OS・SDKのリクエスト情報、IPアドレス、仮名化されたSDK識別子、クラッシュ指標・スタックトレース、一部の操作情報などがGoogleに自動収集される場合があります。また、表示対象として渡した座標が処理される場合があります。
