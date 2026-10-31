@@ -23,7 +23,7 @@ Depending on the features used and permissions granted, ASM handles the followin
 - **Session and settings data:** measurement start/end times and locations, session identifiers, recording state, and app settings.
 - **Voice memos:** audio recorded at the user's request, recording time, session association, and recording location.
 - **Diagnostic information:** logs used to troubleshoot app behavior. Depending on settings and export options, logs may contain technical information and location- or session-related information.
-- **External-service settings:** an OpenWeather API key if configured by the user. The key is encrypted for on-device storage using an Android Keystore-managed key. Backup and device-transfer behavior depends on the OS version, device and user settings; encrypted data may not remain usable after restoration to another device.
+- **External-service settings:** an OpenWeather API key if configured by the user. The key is encrypted for on-device storage using an Android Keystore-managed key. The key is excluded from ASM's settings backup/export and, in the current Android backup rules, its encrypted SharedPreferences file is excluded from cloud backup and device transfer.
 
 ### 3. Purposes and on-device storage
 Information is used to display speed, distance, elevation and satellite information; save and review measurement history; record and play voice memos; retrieve and cache elevation data; export or share information at the user's request; and troubleshoot the app.
@@ -51,7 +51,7 @@ When the user exports or shares a file, it is passed to the storage location or 
 ### 6. Export, diagnostics and backup
 GNSS session exports may include location, time, satellite information and measurement logs from the selected session. Diagnostic logs may contain device environment, settings, operational events and, in some cases, location- or session-related information. Review the file and destination before sharing or saving it.
 
-Android backup and device transfer behavior depends on the OS version, device and user settings. ASM's current configuration excludes the elevation-cache database from backup; this does not mean all app data is excluded.
+Android backup and device-transfer behavior depends on the OS version, device and user settings. ASM's current rules exclude the elevation-cache database and the encrypted OpenWeather API-key preferences file from cloud backup and device transfer; this does not mean all other app data is excluded.
 
 ### 7. Permissions
 Location is used for measurement and location display; the microphone is used for voice memos initiated by the user; and the camera is used by camera-related features. Notifications and internet access are used where needed. Permissions can be changed in device settings, but denying or revoking a permission may make related features unavailable.
@@ -87,7 +87,7 @@ Privacy inquiries: **accuspeedmetersupport@gmail.com**
 - **セッション・設定情報：** 計測の開始・終了時刻、開始・終了地点、セッション識別子、記録状態、アプリ設定など。
 - **音声メモ：** 利用者が録音を開始した場合の音声ファイル、録音時刻、セッションとの関連付け、録音地点情報。
 - **診断情報：** アプリの動作や障害の調査に使うログ。ログには技術情報や、設定・ログ出力オプションによって位置・セッションに関する情報が含まれる場合があります。
-- **外部サービス用の設定：** 利用者が設定した場合のOpenWeather APIキー。キーはAndroid Keystoreで管理される鍵を用いて暗号化し、端末内に保存します。バックアップや端末移行の挙動はOSのバージョン、端末、ユーザー設定に依存し、復元先では暗号化データを利用できない場合があります。
+- **外部サービス用の設定：** 利用者が設定した場合のOpenWeather APIキー。キーはAndroid Keystoreで管理される鍵を用いて暗号化し、端末内に保存します。ASM独自の設定バックアップ／エクスポートには含めず、現在のAndroidバックアップ設定でも暗号化された設定ファイルをクラウドバックアップおよび端末移行の対象から除外しています。
 
 ### 3. 利用目的と端末内保存
 情報は、速度・距離・標高・衛星情報の表示、計測履歴の保存と振り返り、音声メモの録音・再生、標高データの取得・キャッシュ、利用者が開始するエクスポート／共有、動作確認・障害調査のために利用します。
@@ -115,7 +115,7 @@ Privacy inquiries: **accuspeedmetersupport@gmail.com**
 ### 6. エクスポート、診断ログ、バックアップ
 GNSSセッションのエクスポートには、選択したセッションの位置、時刻、衛星情報、測定ログ等が含まれる場合があります。診断ログにも端末環境、設定、動作イベント、場合によっては位置・セッション関連情報が含まれます。共有・保存する前に、ファイルの内容と保存先を確認してください。
 
-Androidのバックアップ／端末移行は、OSのバージョン、端末、ユーザー設定に応じて動作します。ASMの設定では標高キャッシュ用データベースをバックアップ対象から除外していますが、すべてのアプリデータが対象外になることを意味しません。
+Androidのバックアップ／端末移行は、OSのバージョン、端末、ユーザー設定に応じて動作します。ASMの現在の設定では、標高キャッシュ用データベースとOpenWeather APIキーを含む暗号化設定ファイルをクラウドバックアップおよび端末移行の対象から除外していますが、それ以外のすべてのアプリデータが対象外になることを意味しません。
 
 ### 7. 権限
 位置情報は計測・位置表示などに、マイクは利用者が開始する音声メモ録音に、カメラはカメラを利用する機能に使用します。機能に応じて通知やインターネット通信も使用します。端末の設定で権限を変更できますが、権限を拒否・取り消すと関連機能が利用できない場合があります。
