@@ -72,6 +72,8 @@ Privacy inquiries: **accuspeedmetersupport@gmail.com**
 
 ---
 
+---
+
 ## Japanese
 
 ### 1. 適用範囲
@@ -133,63 +135,3 @@ Androidのバックアップ／端末移行は、OSのバージョン、端末�
 プライバシーに関する問い合わせ先：**accuspeedmetersupport@gmail.com**
 
 ---
-
-## English
-
-### 1. Scope
-This policy describes how AccuSpeedMeter (ASM) handles information. Separate terms and privacy policies may also apply to third-party services such as Google Maps, Android, data providers, and destinations selected by the user for sharing.
-
-### 2. Information handled
-Depending on the features used and permissions granted, ASM handles the following information on the device:
-
-- **Location and measurement data:** latitude, longitude, time, speed, distance, elevation, and accuracy.
-- **GNSS data:** satellite identifiers, signal strength, positioning, satellite and measurement logs, and navigation messages.
-- **Session and settings data:** measurement start/end times and locations, session identifiers, recording state, and app settings.
-- **Voice memos:** audio recorded at the user's request, recording time, session association, and recording location.
-- **Diagnostic information:** logs used to troubleshoot app behavior. Depending on settings and export options, logs may contain technical information and location- or session-related information.
-- **External-service settings:** an OpenWeather API key if configured by the user. The app is designed to encrypt the key for on-device storage rather than store it as an ordinary plaintext preference.
-
-### 3. Purposes and on-device storage
-Information is used to display speed, distance, elevation and satellite information; save and review measurement history; record and play voice memos; retrieve and cache elevation data; export or share information at the user's request; and troubleshoot the app.
-
-Measurement history and GNSS logs are stored in the app database or similar storage. Voice memos are stored in app-specific internal storage. Elevation data may be cached. Information may remain on the device until the user deletes it in the app.
-
-### 4. External services
-Depending on the feature, settings and region, ASM sends requests to:
-
-- **Geospatial Information Authority of Japan (GSI):** elevation tiles for Japan.
-- **Copernicus DEM distribution services:** elevation tiles outside Japan.
-- **Japan Meteorological Agency (JMA):** sea-level pressure and AMeDAS-related data. Requests may include station or dataset identifiers.
-- **OpenWeather:** if enabled and configured with an API key, requests containing latitude, longitude and the API key are sent to retrieve pressure data.
-- **Google Maps, Street View and related services:** the Google Maps SDK/services may communicate to display maps and panoramas and may process map requests and device/SDK information.
-- **Place-name lookup (Android Geocoder):** when resolving names for recorded locations, coordinates may be processed by Android or its provider depending on the device's Geocoder implementation and service configuration.
-- **Android and user-selected sharing destinations:** when OS backup/device transfer, file selection or sharing features are used, the operating system or selected destination may process the relevant information.
-
-Each provider's own terms and privacy policy govern its handling of information. This policy will be updated if provider behavior or ASM implementation changes.
-
-### 5. Transfers to the developer and third parties
-At the time this policy was prepared, no feature was identified that automatically sends measurement history or voice memos to a server operated by the ASM developer. Requests to external data providers and map services occur as needed to provide the features described above.
-
-When the user exports or shares a file, it is passed to the storage location or app selected by the user. Subsequent handling is governed by the destination's policies and settings.
-
-### 6. Export, diagnostics and backup
-GNSS session exports may include location, time, satellite information and measurement logs from the selected session. Diagnostic logs may contain device environment, settings, operational events and, in some cases, location- or session-related information. Review the file and destination before sharing or saving it.
-
-Android backup and device transfer behavior depends on the OS version, device and user settings. ASM's current configuration excludes the elevation-cache database from backup; this does not mean all app data is excluded.
-
-### 7. Permissions
-Location is used for measurement and location display; the microphone is used for voice memos initiated by the user; and the camera is used by camera-related features. Notifications and internet access are used where needed. Permissions can be changed in device settings, but denying or revoking a permission may make related features unavailable.
-
-### 8. Retention, deletion and security
-Delete measurement history and voice memos through the app where deletion controls are provided. Exported files and copies stored by sharing destinations are not removed when data is deleted in ASM. Clearing app data or uninstalling the app may cause loss of data that has not been backed up.
-
-The developer takes information protection into consideration but cannot guarantee complete security across all environments, including devices, OS backups, sharing destinations and external services. Use care when sharing location history or audio.
-
-### 9. Children's use
-Minors should consult a parent or guardian and take care when storing or sharing location information, movement history and recordings.
-
-### 10. Changes
-This policy may be updated as features, external services or laws change. After publication, the latest version will be available at the public URL listed below.
-
-### 11. Contact
-Privacy inquiries: **accuspeedmetersupport@gmail.com**
