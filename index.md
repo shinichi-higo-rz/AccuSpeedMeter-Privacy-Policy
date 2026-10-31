@@ -35,7 +35,7 @@ Depending on the feature, settings and region, ASM sends requests to:
 
 - **Geospatial Information Authority of Japan (GSI):** elevation tiles for Japan.
 - **Copernicus DEM distribution services:** elevation tiles outside Japan.
-- **Japan Meteorological Agency (JMA):** sea-level pressure and AMeDAS-related data. Requests may include station or dataset identifiers.
+- **Japan Meteorological Agency (JMA):** sea-level pressure and AMeDAS-related data. The app downloads the station table, latest observation time, and observation map; it selects a nearby station locally using the device location, and the current request URLs do not include the user's coordinates.
 - **OpenWeather:** if enabled and configured with an API key, requests containing latitude, longitude and the API key are sent to retrieve pressure data.
 - **Google Maps, Street View and related services:** the Google Maps SDK/services communicate to display maps and panoramas. Depending on the SDK version and use, Google may automatically collect request metadata (such as device/OS and SDK version information), IP address, a pseudonymous SDK identifier, crash metrics and stack traces, and certain interaction data. The SDK may also process the coordinates supplied for the requested map or panorama.
 - **Place-name lookup (Android Geocoder):** when resolving names for recorded locations, coordinates may be processed by Android or its provider depending on the device's Geocoder implementation and service configuration.
@@ -99,7 +99,7 @@ Privacy inquiries: **accuspeedmetersupport@gmail.com**
 
 - **国土地理院（GSI）：** 日本国内の標高タイル取得。
 - **Copernicus DEM配信サービス：** 海外の標高タイル取得。
-- **気象庁（JMA）：** 海面気圧やアメダス関連データの取得。リクエストに観測地点・データ識別子等が含まれる場合があります。
+- **気象庁（JMA）：** 海面気圧やアメダス関連データの取得。観測所一覧、最新の観測時刻、観測データを取得し、端末の位置を使った観測所の選択はアプリ内で行います。現在の実装では、JMAへのリクエストURLに利用者の座標は含まれません。
 - **OpenWeather：** 利用者が有効化しAPIキーを設定した場合、気圧データ取得のため緯度・経度とAPIキーを含むリクエストを送信します。
 - **Google Maps／Street View等：** 地図・パノラマ表示のためGoogle Maps SDK／サービスが通信します。SDKのバージョンや利用方法に応じて、端末・OS・SDKのリクエスト情報、IPアドレス、仮名化されたSDK識別子、クラッシュ指標・スタックトレース、一部の操作情報などがGoogleに自動収集される場合があります。また、表示対象として渡した座標が処理される場合があります。
 - **地点名検索（Android Geocoder）：** 記録地点の名称を取得する機能では、端末のGeocoder実装・サービス構成に応じて、座標等がAndroidやその提供元で処理される場合があります。
