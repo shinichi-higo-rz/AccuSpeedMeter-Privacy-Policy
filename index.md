@@ -23,7 +23,7 @@ Depending on the features used and permissions granted, ASM handles the followin
 - **Session and settings data:** measurement start/end times and locations, session identifiers, recording state, and app settings.
 - **Voice memos:** audio recorded at the user's request, recording time, session association, and recording location.
 - **Diagnostic information:** logs used to troubleshoot app behavior. Depending on settings and export options, logs may contain technical information and location- or session-related information.
-- **External-service settings:** an OpenWeather API key if configured by the user. The app is designed to encrypt the key for on-device storage rather than store it as an ordinary plaintext preference.
+- **External-service settings:** an OpenWeather API key if configured by the user. The key is encrypted for on-device storage using an Android Keystore-managed key. Backup and device-transfer behavior depends on the OS version, device and user settings; encrypted data may not remain usable after restoration to another device.
 
 ### 3. Purposes and on-device storage
 Information is used to display speed, distance, elevation and satellite information; save and review measurement history; record and play voice memos; retrieve and cache elevation data; export or share information at the user's request; and troubleshoot the app.
@@ -87,7 +87,7 @@ Privacy inquiries: **accuspeedmetersupport@gmail.com**
 - **セッション・設定情報：** 計測の開始・終了時刻、開始・終了地点、セッション識別子、記録状態、アプリ設定など。
 - **音声メモ：** 利用者が録音を開始した場合の音声ファイル、録音時刻、セッションとの関連付け、録音地点情報。
 - **診断情報：** アプリの動作や障害の調査に使うログ。ログには技術情報や、設定・ログ出力オプションによって位置・セッションに関する情報が含まれる場合があります。
-- **外部サービス用の設定：** 利用者が設定した場合のOpenWeather APIキー。キーは暗号化して端末内に保存し、通常の平文設定としてバックアップ対象にしない設計です。
+- **外部サービス用の設定：** 利用者が設定した場合のOpenWeather APIキー。キーはAndroid Keystoreで管理される鍵を用いて暗号化し、端末内に保存します。バックアップや端末移行の挙動はOSのバージョン、端末、ユーザー設定に依存し、復元先では暗号化データを利用できない場合があります。
 
 ### 3. 利用目的と端末内保存
 情報は、速度・距離・標高・衛星情報の表示、計測履歴の保存と振り返り、音声メモの録音・再生、標高データの取得・キャッシュ、利用者が開始するエクスポート／共有、動作確認・障害調査のために利用します。
